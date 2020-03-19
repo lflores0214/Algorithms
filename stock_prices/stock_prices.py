@@ -45,7 +45,27 @@ def find_max_profit(prices):
 stonks = [10000, 1000, 5900, 50, 5000, 10]
 find_max_profit(stonks)
 
+'''
+def find_max_profit(prices):
+  min_price = prices[0]
+  max_profit = prices[1] - min_price
+  
+  for i in range(len(prices)):
+    price = prices[i]
+    max_profit = max(price - min_price, max_profit)
+    min_price = min(price, min_price)
+    print(max_profit, min_price)
+'''
 
+def find_max_profit(prices):
+  #first stock is bought at a price in the list, it cannot be the last price
+  # #second stock is sold at a price in the list, it cannot be the first price
+  # #also the second stock must be after the first stock in the list
+  # #the list will remain in the order given
+  # #we need to find the maximum difference between 2 of the numbers while adhereing to the rules above
+  # #first starting with index of 1 subtract each following value from that at index of 0
+  # #find all possible profits and then find maximum  
+  # profits = []   for i in range(0, len(prices)-1):     buy = i     for j in range(i+1, len(prices)):       current_sell = prices[j]       current_buy = prices[buy]       profit = current_sell - current_buy       profits.append(profit)   return max(profits)  print(find_max_profit(stock_prices)) 
 if __name__ == '__main__':
     # This is just some code to accept inputs from the command line
     parser = argparse.ArgumentParser(

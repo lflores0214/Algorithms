@@ -9,12 +9,12 @@ if the ingredient value is less than the corresponding recipe value return 0
 divide // the value of ingredients by the value of recipes to get the number of batches you'll be able to make
 '''
 def recipe_batches(recipe, ingredients):
-  total_batches = 100
+  total_batches = float('inf')
   for i in recipe:
     # if the recipe calls for something not in the ingredients return 0
     if ingredients.get(i) == None:
       return 0
-    # if the recipe calls for more than whats available
+    # if the recipe calls for more than whats available in ingredients
     if recipe[i] > ingredients[i]:
       return 0
     # this has to be down here because the fn will break if there is no ingredient[i] so it has to go through the check first
