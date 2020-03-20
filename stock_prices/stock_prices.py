@@ -19,26 +19,44 @@ Turns out I'm not using min_price for anything ?
 '''
 
 
+# def find_max_profit(prices):
+#     min_price = float('inf')
+#     max_profit = float('-inf')
+#     # loop through array
+#     for i in range(len(prices) - 1):
+#       # find the new min_price by looping and assign the lowest number to min_price
+#         # if prices[i] < min_price:
+#         #     min_price = prices[i]
+
+#             for j in range(len(prices) - 1):
+#               # loop through the array and subtract prices[i] from prices[j] as j iterates and finds all differences between prices[j] and prices[i]
+#                 # if j is <= to i pass since you cannot sell before you buy
+#                 if j <= i:
+#                     pass
+#                 else:
+#                     current_profit = prices[j] - prices[i]
+
+#                     print(current_profit)
+#                     if current_profit > max_profit:
+#                       max_profit = current_profit
+#     return max_profit
+
 def find_max_profit(prices):
     min_price = float('inf')
     max_profit = float('-inf')
     # loop through array
     for i in range(len(prices) - 1):
-      # find the new min_price by looping and assign the lowest number to min_price
-        if prices[i] < min_price:
-            min_price = prices[i]
+        for j in range(len(prices) - 1):
+          # loop through the array and subtract prices[i] from prices[j] as j iterates and finds all differences between prices[j] and prices[i]
+          # if j is <= to i pass since you cannot sell before you buy
+            if j <= i:
+                pass
+            else:
+                current_profit = prices[j] - prices[i]
 
-            for j in range(len(prices) - 1):
-              # loop through the array and subtract prices[i] from prices[j] as j iterates and finds all differences between prices[j] and prices[i]
-                # if j is <= to i pass since you cannot sell before you buy
-                if j <= i:
-                    pass
-                else:
-                    current_profit = prices[j] - prices[i]
-
-                    print(current_profit)
-                    if current_profit > max_profit:
-                      max_profit = current_profit
+                print(current_profit)
+                if current_profit > max_profit:
+                    max_profit = current_profit
     return max_profit
 
 
@@ -57,14 +75,17 @@ def find_max_profit(prices):
     print(max_profit, min_price)
 '''
 
-def find_max_profit(prices):
-  #first stock is bought at a price in the list, it cannot be the last price
+
+# def find_max_profit(prices):
+
+
+  # first stock is bought at a price in the list, it cannot be the last price
   # #second stock is sold at a price in the list, it cannot be the first price
   # #also the second stock must be after the first stock in the list
   # #the list will remain in the order given
   # #we need to find the maximum difference between 2 of the numbers while adhereing to the rules above
   # #first starting with index of 1 subtract each following value from that at index of 0
-  # #find all possible profits and then find maximum  
+  # #find all possible profits and then find maximum
   # profits = []   for i in range(0, len(prices)-1):     buy = i     for j in range(i+1, len(prices)):       current_sell = prices[j]       current_buy = prices[buy]       profit = current_sell - current_buy       profits.append(profit)   return max(profits)  print(find_max_profit(stock_prices)) 
 if __name__ == '__main__':
     # This is just some code to accept inputs from the command line

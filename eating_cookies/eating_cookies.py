@@ -19,7 +19,7 @@ def eating_cookies(n, cache=None):
       return 4
     else:
         return eating_cookies(n - 1) + eating_cookies(n - 2) + eating_cookies(n - 3)
-    
+
     #* Using Cache
     # if cache is None:
     #   cache ={0: 1, 1: 1, 2: 2, 3: 4}
@@ -36,7 +36,7 @@ def eating_cookies(n, cache=None):
     #     return cache[n]
     # else:
     #   cache[n] = eating_cookies(n - 1, cache) + eating_cookies(n - 2, cache) + eating_cookies(n - 3, cache)
-    
+
     # return cache[n]
 print(eating_cookies(10))
 
